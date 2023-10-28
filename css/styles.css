@@ -12,6 +12,48 @@
     --btn-primary-color: #fff;
 }
 
+@media (max-width: 320px) {
+    .mobile-visibile {
+        display: block;
+    }
+
+    .tablet-hidden,
+    .desktop-hidden {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width:768px ) {
+        .tablet-visible {
+            display: block;
+        }
+
+        .mobile-hidden,
+        .desktop-hidden { 
+            display: none;
+        }
+
+}
+
+@media screen and (min-width:1158px) {
+        .desktop-visible {
+            display: block;
+        }
+        .mobile-hidden,
+         .tablet-hidden {
+            display: none;
+         }
+}
+
+
+
+
+
+
+
+
+
 .row {
     display: flex;
     flex-direction: row;
@@ -103,6 +145,31 @@ h5 {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.js-menu {
+    display: none;
+}
+
+.js-menu .is-open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    width: 337px;
+    height: 100%;
+    padding: 48px 40px;
+    z-index: 1;
+}
+
+.js-menu .js-close-menu {
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 30px;
 }
 
 .text-blue,
@@ -775,8 +842,9 @@ textarea:focus {
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 1);
 }
-#terms-and-conditions {
-   accent-color:rgba(33, 150, 243, 1);
+
+input[type="checkbox"] {
+    accent-color: rgba(33, 150, 243, 1);
 }
 
 .form-inline {
@@ -906,6 +974,12 @@ a {
 
 .contacts a:focus {
     color: #2196F3;
+}
+
+.studio-header {
+    width: 480px;
+    height: 60px;
+    background-color: #ececec;
 }
 
 .header-container {
