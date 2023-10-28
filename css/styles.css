@@ -12,47 +12,6 @@
     --btn-primary-color: #fff;
 }
 
-@media (max-width: 320px) {
-    .mobile-visibile {
-        display: block;
-    }
-
-    .tablet-hidden,
-    .desktop-hidden {
-        display: none;
-    }
-}
-
-
-@media screen and (min-width:768px ) {
-        .tablet-visible {
-            display: block;
-        }
-
-        .mobile-hidden,
-        .desktop-hidden { 
-            display: none;
-        }
-
-}
-
-@media screen and (min-width:1158px) {
-        .desktop-visible {
-            display: block;
-        }
-        .mobile-hidden,
-         .tablet-hidden {
-            display: none;
-         }
-}
-
-
-
-
-
-
-
-
 
 .row {
     display: flex;
@@ -66,6 +25,11 @@
 
 body {
     font-family: var(--link-text);
+}
+
+body.is-open,
+html.is-open {
+    overflow: hidden;
 }
 
 /* tag zone */
@@ -141,36 +105,6 @@ h5 {
     align-items: center;
 }
 
-.header-container div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.js-menu {
-    display: none;
-}
-
-.js-menu .is-open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: #fff;
-    width: 337px;
-    height: 100%;
-    padding: 48px 40px;
-    z-index: 1;
-}
-
-.js-menu .js-close-menu {
-    border: none;
-    background: none;
-    cursor: pointer;
-    align-self: flex-end;
-    margin-bottom: 30px;
-}
 
 .text-blue,
 .text-black,
@@ -228,6 +162,14 @@ nav li a:hover {
     margin-left: 50px;
 }
 
+@media (max-width: 768px) {
+    .nav-container, 
+    .top-nav,
+    .contact-header {
+        display: none;
+    }
+}
+
 .current {
     color: #2196f3;
 }
@@ -278,10 +220,6 @@ nav li a:hover {
     font-weight: 500;
 }
 
-.header-container div {
-   width: 50%;
-}
-
 .contact-header li svg {
     position: relative;
     top: -1px;
@@ -321,6 +259,109 @@ nav li a:hover {
     cursor:pointer;
 }
 
+.hamburger-menu {
+    background: none;
+    border: none;
+    position: relative;
+    z-index: 4;
+}
+
+.js-menu-container svg {
+    width: 40px;
+    height: 40px;
+}
+
+
+.js-menu-container.is-open .js-open-menu {
+    display: none;
+}
+
+.js-menu-container .js-close-menu {
+    display: none;
+}
+
+.js-menu-container.is-open .js-close-menu {
+    display: block;
+}
+
+
+.js-menu-container .mobile-menu-content {
+    display: none;
+}
+
+.js-menu-container.is-open .mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 100%;
+    height: calc(100% - 220px);
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    padding: 60px 40px 50px;
+}
+
+
+.top-mobile-menu li a {
+   font-family: var(--link-text);
+   font-size: 35px;
+   font-weight: 500;
+   color: #212121;
+}
+
+.top-mobile-menu li a:focus  {
+    color: #2196F3;
+    cursor: pointer;
+}
+
+.top-mobile-menu li {
+    padding-bottom: 32px;
+}
+
+.bottom-mobile-menu a {
+    display: flex;
+    flex-direction: column;
+}
+
+.tel {
+    font-family: var(--link-text);
+    font-size: 30px;
+    font-weight: 500;
+    color: #2196F3;
+}
+
+.email {
+    font-family: var(--link-text);
+    font-size: 20px;
+    font-weight: 500;
+    color: #757575;
+    padding-top: 18px;
+}
+
+.mobile-social {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: var(--link-text);
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 64px;
+}
+
+.mobile-social a {
+    color: #2196F3;
+}
+
+@media (min-width: 768px) {
+    .js-menu-container {
+        display: none;
+    }
+}
+
 
 .banner-section {
     background: url("../images/banner-background-img.png");
@@ -329,6 +370,8 @@ nav li a:hover {
     margin: auto;
     background-color: #2F303A;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-size: cover;
     display: block;
 }
@@ -578,7 +621,7 @@ h5 {
 }
 
 .regular-customers {
-    width: 1170px;
+    max-width: 1170px;
     height: 184px;
     padding-top: 94px;
     padding-bottom: 94px;
@@ -976,11 +1019,6 @@ a {
     color: #2196F3;
 }
 
-.studio-header {
-    width: 480px;
-    height: 60px;
-    background-color: #ececec;
-}
 
 .header-container {
     border-bottom: 1px solid #ececec;
@@ -992,7 +1030,7 @@ a {
     align-items: center;
 }
        
-.header-container  div {
+.header-container  .top-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1218,3 +1256,5 @@ footer p  {
     display: inline-block;
     margin-right: 25px;
 }
+
+ 
