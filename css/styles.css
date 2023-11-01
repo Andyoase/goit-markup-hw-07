@@ -486,6 +486,11 @@ nav li a:hover {
    width: 100%;
 }
 
+.features li {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .feature-img {
    margin-bottom: 20px;
