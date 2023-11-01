@@ -397,13 +397,18 @@ nav li a:hover {
 .banner-section::after {
     content: "";
     position: absolute;
-    height: 600px;
     background-color: rgba(196, 196, 196, 0.3);
     z-index: 1;
     display: block;
     top: 80px;
     max-width: 1600px;
     width: 100%;
+}
+
+@media (min-width:768px) {
+    .banner-section: :after {
+       height: 600px; 
+    }
 }
 
 
